@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserManager | Professional Identity Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">User<span>Manager</span></div>
+        <div class="nav-links">
+            <button class="nav-btn active" onclick="showSection('hero')">Home</button>
+            <button class="nav-btn" onclick="showSection('register')">Register</button>
+            <button class="nav-btn" onclick="showSection('admin')">Admin Panel</button>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section id="hero-section" class="active">
+        <div class="hero-wrapper">
+            <h1>Secure User Management <br><span class="text-gradient">Platform</span></h1>
+            <p>A professional system for managing user identities, roles, and secure authentication built with Spring Boot and MongoDB.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="showSection('register')">Get Started</button>
+                <button class="btn btn-outline" onclick="showSection('admin')">Access Admin Panel</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register-section">
+        <div class="card card-center">
+            <div class="card-header">
+                <h2>Create New User</h2>
+                <p>Enter details to initialize a new system account.</p>
+            </div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="reg-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="reg-username" placeholder="johndoe123" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="reg-email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="reg-password" placeholder="Min. 6 characters" required>
+                        <button type="button" id="toggle-password" class="toggle-btn">Show</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Assigned Role</label>
+                    <select id="reg-role">
+                        <option value="ROLE_USER">Standard User</option>
+                        <option value="ROLE_ADMIN">Administrator</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Register Account</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin-section">
+        <div class="admin-wrapper">
+            <div class="card admin-sidebar">
+                <h3>Admin Authorization</h3>
+                <p class="small text-muted">Provide credentials to sync data.</p>
+                <hr>
+                <div class="form-group">
+                    <label>Admin Username</label>
+                    <input type="text" id="auth-user" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="auth-pass" placeholder="Password">
+                        <button type="button" id="toggle-admin-password" class="toggle-btn">Show</button>
+                    </div>
+                </div>
+                <button id="btn-load-users" class="btn btn-accent btn-full">Fetch System Users</button>
+            </div>
+
+            <div class="admin-content">
+                <div class="content-header">
+                    <h3>Registered Identities</h3>
+                    <span id="user-count" class="badge">0 Total</span>
+                </div>
+                <div id="users-grid" class="user-grid">
+                    <div class="empty-state">
+                        <p>Authorized sync required to display user data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
