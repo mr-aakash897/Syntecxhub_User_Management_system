@@ -115,10 +115,11 @@ spring.data.mongodb.database=usermanagement
 ---
 
 ## ▶ How to Run
-### 1. Clone: ```git clone https://github.com/mr-aakash897/Syntecxhub_User_Management_system.git```
-### 2. Build: ```mvn clean install```
-### 3. Run: ```mvn spring-boot:run```
-### 4. Access: Open ```http://localhost:8080``` in your browser.
+
+#### 1. Clone: ```git clone https://github.com/mr-aakash897/Syntecxhub_User_Management_system.git```
+#### 2. Build: ```mvn clean install```
+#### 3. Run: ```mvn spring-boot:run```
+#### 4. Access: Open ```http://localhost:8080``` in your browser.
 
 ---
 
